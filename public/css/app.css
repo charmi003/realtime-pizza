@@ -1,0 +1,168 @@
+body {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+button {
+  background-color: #FE5F1E;
+  color: #fff;
+  transition: all 0.4s ease-in-out 0.04s;
+}
+button:hover {
+  background-color: #B23301;
+}
+
+input:not([type=password]):focus, button:focus {
+  outline-width: 0;
+  box-shadow: 0 0 5px #51cbee;
+  border: 1px solid #51cbee;
+}
+
+a:focus {
+  outline-width: 0;
+}
+
+.fa-eye-slash, .fa-eye {
+  color: grey;
+  cursor: pointer;
+  display: none;
+}
+
+.fa-eye-slash {
+  display: initial;
+}
+
+nav {
+  color: #F8F8F8;
+}
+nav a {
+  transition: all 0.4s ease-in-out 0.04s;
+}
+nav a:hover {
+  color: #FE5F1E;
+}
+nav .cart-link {
+  background: #FE5F1E;
+}
+nav .cart-link span {
+  display: inline-block;
+  background: #F8F8F8;
+  color: #232323;
+}
+nav .cart-link:hover {
+  background: #B23301;
+}
+
+#hero {
+  background-color: #F8F8F8;
+}
+
+#menu h1 {
+  word-spacing: 1px;
+  text-shadow: 4px 7px 8px #ccc;
+}
+#menu .card .card-img-top {
+  width: 50% !important;
+}
+#menu .card .card-img-container {
+  background-color: #F8F8F8;
+  text-align: center;
+}
+#menu .card .card-text {
+  background: #F8F8F8;
+}
+#menu .card a {
+  display: inline-block;
+  border: 3px solid #FE5F1E;
+  color: #FE5F1E;
+}
+#menu .card a:hover {
+  color: #fff;
+  background-color: #FE5F1E;
+}
+#menu .card:hover {
+  transform: scale(1.07);
+}
+
+#empty-cart {
+  background: #F8F8F8;
+}
+#empty-cart div {
+  height: 90vh;
+}
+#empty-cart a {
+  color: #fff;
+}
+#empty-cart a:hover {
+  color: #fff;
+}
+
+#order-summary {
+  background-color: #F8F8F8;
+  min-height: 90vh;
+  height: auto;
+}
+#order-summary .cart-total-amt {
+  color: #FE5F1E;
+  cursor: pointer;
+}
+#order-summary .cart-total-amt:hover {
+  color: #B23301;
+  transition: all 0.4s ease-in-out 0.04s;
+}
+
+#register, #login {
+  height: 95vh;
+  background: #F8F8F8;
+}
+#register a, #login a {
+  color: #FE5F1E;
+}
+#register a:hover, #login a:hover {
+  color: #B23301;
+}
+
+section[id$=orders] {
+  height: 90vh;
+}
+
+#customer-orders tr {
+  color: #FE5F1E;
+}
+#customer-orders tr td:first-child a:hover {
+  color: #B23301;
+}
+#customer-orders tr:not(.line-through) {
+  color: green;
+}
+#customer-orders tr:not(.line-through) td:first-child a:hover {
+  color: darkgreen;
+}
+#customer-orders tr:first-child {
+  color: #232323;
+}
+
+#payment {
+  height: 90vh;
+  background: #F8F8F8;
+}
+#payment a:hover {
+  color: #fff;
+}
+
+#track {
+  background-color: #F8F8F8;
+  min-height: 85vh;
+}
+#track .order-id {
+  color: green;
+}
+#track .circle {
+  height: 13px;
+  width: 13px;
+}
+#track .line {
+  height: 8vh;
+  border-left: 2px solid #232323;
+}

@@ -1,0 +1,72 @@
+
+<section id="admin-orders" class="p-4">
+    
+    <h1 class="text-lg w-3/4 mx-auto font-bold mb-3">All Orders</h1>
+    <table class="table border-2 w-full mx-auto">
+        <tr>
+            <th class="text-center border-2">Order</th>
+            <th class="text-center border-2">Customer</th>
+            <th class="text-center border-2">Phone</th>
+            <th class="text-center border-2">Address</th>
+            <th class="text-center border-2">Status</th>
+            <th class="text-center border-2">Payment</th>
+            <th class="text-center border-2">Placed At</th>
+        </tr>
+
+            <% for(let order of orders){
+
+                let date=order.createdAt; 
+    
+                function n(n){
+                    return n > 9 ? "" + n: "0" + n;
+                }
+
+                let hrs=n(date.getHours());
+                let mins=n(date.getMinutes());
+                let time=hrs+":"+mins;
+                %>
+                <tr>
+                    <td class="border-2 py-2.5">
+                        <p class="mb-2"><%= order._id %></p>
+                        <ul>
+                            <% for(item of order.Items){ %>
+                                <li>
+                                    <span><%= item.Pizza.Name %></span>
+                                    <span>- <%= item.Quantity %> </span>
+                                </li>
+                            <% } %>
+                        </ul>
+
+                    </td>
+
+                    <td class="border-2 text-center py-2.5"><%= order.User.Name %></td>
+                    <td class="border-2 text-center py-2.5"><%= order.Phone %></td>
+                    <td class="border-2 text-center py-2.5"><%= order.Address %></td>
+
+                    <td class="border-2 text-center py-2.5">
+    
+                        <form action="/admin/order-status" method="post" class="order-status-form">
+                            <select name="Status" id="<%= order._id %>" data-initial-status="<%= order.Status%>" class="form-select">
+                                <option value="placed">Placed</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="prepared">Prepared</option>
+                                <option value="out-for-delivery">Out For Delivery</option>
+                                <option value="delivered">Delivered</option>
+                            </select>
+                        </form>
+            
+                    </td>
+
+                    <td class="border-2 text-center py-2.5"> &#8377;<%= order.TotalPrice %><span class="uppercase ml-3"><%= order.PaymentType %></span></td>
+                    <td class="border-2 text-center py-2.5"> &nbsp; <%= time %> </td>
+
+                </tr>
+
+            <% } %>        
+        
+    </table>
+
+    
+</section>
+
+

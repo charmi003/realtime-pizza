@@ -1,0 +1,18 @@
+<h3>Hiee <%= order.User.Name %>,</h3>
+
+<h2>Your order containing the following items has been placed successfully!!</h2>
+
+<h3>Items Summary</h3>
+
+<ul>
+    <% for(let item of order.Items){ %>
+        <li><%= item.Pizza.Name %> - <%= item.Quantity %></li>
+    <% } %>
+</ul>
+
+<h4> Payment Details: &#8377;<%= order.TotalPrice %> , <span class="capitalize"><%= order.PaymentType %></span> </h4>
+
+<h3>Your order id is: <%= order._id %></h3>
+<h3>You can track your order <a href="http://localhost:1000/orders/track/<%= order._id %>">here</a></h3>
+
+Thank you

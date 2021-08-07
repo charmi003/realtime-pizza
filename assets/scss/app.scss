@@ -1,0 +1,284 @@
+@import './variables';
+
+
+
+body{
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    color:$dark;
+}
+
+
+button
+{
+    @include button-style;
+}
+
+
+
+//glowing blue borders for the input
+input:not([type='password']):focus,button:focus {
+    outline-width: 0;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+a:focus
+{
+    outline-width: 0;
+}
+
+
+
+//passwords..hide and show
+.fa-eye-slash,.fa-eye
+{
+    color:grey;
+    cursor: pointer;
+    display:none;
+}
+.fa-eye-slash
+{
+    display: initial;
+}
+
+
+
+
+
+
+//styling the header
+
+
+nav
+{
+
+    color:$secondary;
+    a
+    {
+        &:hover{
+            color:$primary;
+        }
+        transition:$smooth;
+    }
+
+    .cart-link
+    {
+        background:$primary;
+
+        span
+        {
+            display:inline-block;
+            background:$secondary;
+            color:$dark;
+        }
+
+        &:hover{
+            background:$primaryHover;
+        }
+    }
+}
+
+
+
+
+//styling the home page
+
+//Styling the banner
+#hero
+{
+    background-color: $secondary;
+}
+
+
+//styles for the menu section
+#menu
+{
+    h1
+    {
+        word-spacing: 1px;
+        text-shadow: 4px 7px 8px $gray;
+
+    }
+
+    .card
+    {
+        .card-img-top
+        {
+            width:50% !important;
+        }
+        .card-img-container
+        {
+            background-color: $secondary;
+            text-align: center;
+        }
+        .card-text
+        {
+            background:$secondary;
+        }
+
+        a
+        {
+            display: inline-block;
+            border:3px solid $primary;
+            color:$primary;
+            &:hover
+            {
+                color:$pure;
+                background-color:$primary;
+            }
+        }
+
+        &:hover
+        {
+            transform:scale(1.07);
+        }
+
+    }
+    
+}
+
+
+
+//styling the cart page
+#empty-cart
+{
+    div
+    {
+        height:90vh;
+    }
+    background:$secondary;
+
+    a
+    {
+        color:$pure;
+        &:hover{
+            color:$pure;
+        }
+    }
+}
+
+
+#order-summary
+{
+    background-color: $secondary;
+    min-height:90vh;
+    height:auto;
+
+    .cart-total-amt
+    {
+        color:$primary;
+        cursor:pointer;
+        &:hover{
+            color:$primaryHover;
+            transition: $smooth;
+        }
+    }
+}
+
+
+
+
+
+//styling the register and login pages
+#register,#login
+{
+    height:95vh;
+    background:$secondary;
+
+    a
+    {
+        color:$primary;
+        &:hover{
+            color:$primaryHover;
+        }
+    }
+}
+
+
+
+
+//styling the orders page
+section[id$=orders]
+{
+    height:90vh;
+    // background:$secondary;
+}
+
+#customer-orders
+{
+    //$primary color for all rows
+    tr
+    {
+        color:$primary;
+    }
+
+    //hover effect for order id 
+    tr td:first-child a
+    {
+        &:hover
+        {
+            color:$primaryHover;
+        }
+    }
+    
+    //undelivered orders -->green color
+    tr:not(.line-through)
+    {
+        color:green;
+        td:first-child a
+        {
+            &:hover
+            {
+                color:darkgreen;
+            }
+        }
+    }
+
+    //header row  -->dark
+    tr:first-child
+    {
+        color:$dark;
+    }
+}
+
+
+
+//styling the payment page
+#payment
+{
+    height:90vh;
+    background:$secondary;
+
+    a
+    {
+        &:hover
+        {
+            color:$pure;
+        }
+    }
+
+}
+
+
+//styling the track page
+#track
+{
+    background-color: $secondary;
+    min-height: 85vh;
+    .order-id
+    {
+        color:green;
+    }
+    .circle
+    {
+        height:13px;
+        width:13px;
+        // background-color: $dark;
+    }
+    .line
+    {
+        height:8vh;
+        border-left:2px solid $dark;
+    }
+}

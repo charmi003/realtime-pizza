@@ -1,0 +1,21 @@
+//colors
+$primary:#FE5F1E;
+$primaryHover:#B23301;
+$secondary:#F8F8F8;
+$pure:#fff;
+$dark:#232323;
+$gray:#ccc;
+
+
+//transition
+$smooth:all .4s ease-in-out .04s;
+
+@mixin button-style {
+    background-color: $primary;
+    color:$pure;
+    transition:$smooth;
+    &:hover
+    {
+        background-color: $primaryHover;
+    }
+}

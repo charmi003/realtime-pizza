@@ -1,0 +1,56 @@
+<section id="customer-orders" class="p-4">
+
+    <% if(user.Orders.length==0){ %>
+
+        <h1 class="text-lg mx-auto font-bold mb-2">No orders found!!</h1>
+    
+    <% }else{ %>
+    
+        <h1 class="text-lg w-full md:w-3/4 mx-auto font-bold mb-3">All Orders</h1>
+        <table class="table border-2 w-full md:w-3/4 mx-auto">
+            <tr>
+                <th class="text-center">Order Id</th>
+                <th class="text-center">Phone</th>
+                <th class="text-center">Address</th>
+                <th class="text-center">Placed At</th>
+            </tr>
+        
+            <%  user.Orders.reverse();
+                for(let order of user.Orders){ let date=order.createdAt; 
+    
+                function n(n){
+                    return n > 9 ? "" + n: "0" + n;
+                }
+    
+                d=n(date.getDate()); 
+                let m=n(date.getMonth()+1);
+                let y=date.getFullYear();
+                let showDate=d+'/'+m+'/'+y;
+        
+        
+                let hrs=n(date.getHours());
+                let mins=n(date.getMinutes());
+                let time=hrs+":"+mins;
+
+                let className="";
+                if(order.Status=='delivered')
+                    className="line-through"
+        
+            %>
+                <tr class=<%= className %>>
+                    <td class="border-2 text-center py-2.5"><a href="/orders/track/<%= order._id %>"><%= order._id %></a></td>
+                    <td class="border-2 text-center py-2.5"><%= order.Phone %></td>
+                    <td class="border-2 text-center py-2.5"><%= order.Address %></td>
+                    <td class="border-2 text-center py-2.5"><%= showDate %> &nbsp; <%= time %></td>
+                </tr>
+            <% } %>
+            
+        </table>
+    
+    <% } %>
+    
+    
+
+    
+</section>
+

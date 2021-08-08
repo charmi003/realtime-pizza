@@ -8,7 +8,7 @@ document.getElementById('rzp-button').onclick = function(e){
     axios.get(`/payment/?total=${totalAmount}&orderId=${orderId}`).then((info)=>{
 
         var options = {
-            "key": 'rzp_test_JByp9lBtJuA4NJ', // Enter the Key ID generated from the Dashboard
+            "key": info.data.keyId, // Enter the Key ID generated from the Dashboard
             "name": "Realtime-Pizza",
             "description": "Payment",
             "image": "https://c8.alamy.com/comp/2C5HDAY/online-shop-logo-design-vector-illustrtaion-mobile-online-shopping-logo-vector-template-2C5HDAY.jpg",

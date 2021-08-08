@@ -1,6 +1,7 @@
 const Order=require("../models/order");
 const Cart=require("../models/cart");
 const mailer=require("../mailers/mailer");
+const env=require("../config/environment");
 
 module.exports.display=function(req,res)
 {
@@ -15,8 +16,8 @@ module.exports.display=function(req,res)
 
 const Razorpay=require("razorpay");
 const razorpay=new Razorpay({
-    key_id:'rzp_test_JByp9lBtJuA4NJ',
-    key_secret:'BcjIapp1lnjE1XH0iBFVBBlV'
+    key_id:env.rzp_keyId,
+    key_secret:env.rzp_keySecret
 })
 
 module.exports.payment=async function(req,res)
@@ -35,7 +36,8 @@ module.exports.payment=async function(req,res)
 
         razorpay.orders.create(options,(err,order)=>{
             res.json({
-                order:order
+                order:order,
+                keyId:env.rzp_keyId
             });
         })
 

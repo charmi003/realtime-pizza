@@ -11,5 +11,7 @@ module.exports={
             user: "RealTimePizzaa@gmail.com", // generated ethereal user
             pass: "realtimepizza123" // generated ethereal password
         }
-    }
+    },
+    rzp_keyId:'rzp_test_JByp9lBtJuA4NJ',
+    rzp_keySecret:'BcjIapp1lnjE1XH0iBFVBBlV'
 }

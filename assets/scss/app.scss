@@ -53,11 +53,11 @@ a:focus
 nav
 {
 
-    color:$secondary;
     a
     {
+        color:$primary;
         &:hover{
-            color:$primary;
+            color:$primaryHover;
         }
         transition:$smooth;
     }

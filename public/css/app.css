@@ -33,14 +33,12 @@ a:focus {
   display: initial;
 }
 
-nav {
-  color: #F8F8F8;
-}
 nav a {
+  color: #FE5F1E;
   transition: all 0.4s ease-in-out 0.04s;
 }
 nav a:hover {
-  color: #FE5F1E;
+  color: #B23301;
 }
 nav .cart-link {
   background: #FE5F1E;

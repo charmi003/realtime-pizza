@@ -9,7 +9,7 @@ document.getElementById('rzp-button').onclick = function (e) {
   var totalAmount = $("input[name='payment-total-amt']").val();
   axios.get("/payment/?total=".concat(totalAmount, "&orderId=").concat(orderId)).then(function (info) {
     var options = {
-      "key": 'rzp_test_JByp9lBtJuA4NJ',
+      "key": info.data.keyId,
       // Enter the Key ID generated from the Dashboard
       "name": "Realtime-Pizza",
       "description": "Payment",

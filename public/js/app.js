@@ -46,6 +46,7 @@ for (var i = 0; i < perfEntries.length; i++) {
     //...delete the contents of the flash container
     $("#flash-success-message").attr("val", "");
     $("#flash-error-message").attr("val", "");
+    $("#flash-sweet-alert").attr("val", "");
   }
 }
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,6 +12,13 @@ button {
 }
 button:hover {
   background-color: #B23301;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: none;
 }
 
 input:not([type=password]):focus, button:focus {
@@ -33,23 +41,165 @@ a:focus {
   display: initial;
 }
 
-nav a {
-  color: #FE5F1E;
-  transition: all 0.4s ease-in-out 0.04s;
-}
-nav a:hover {
-  color: #B23301;
-}
-nav .cart-link {
+#header {
   background: #FE5F1E;
 }
-nav .cart-link span {
+
+.navigation {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  width: 320px;
+  background-color: #232323;
+  color: #232323;
+  position: absolute;
+  z-index: 9999;
+  top: 3px;
+  right: calc(100% - 320px);
+  transition: right 0.5s;
+}
+
+.navigation .menu {
+  list-style-type: none;
+}
+
+.navigation .menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navigation .menu a {
+  display: block;
+  padding: 15px;
+  line-height: 20px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  z-index: 0;
+}
+
+.navigation .menu a::after {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  transition: left 0.25s, right 0.25s;
+}
+
+.navigation .menu a:hover::after {
+  right: 0;
+}
+
+.navigation .has-menu {
+  position: relative;
+}
+
+.navigation .has-menu::before {
+  content: "";
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.navigation .has-menu::after {
+  content: "➤";
+  padding: 15px 0;
+  height: 50px;
+  width: 50px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  transform: rotate(90deg);
+  transition: transform 0.25s;
+}
+
+.navigation .has-menu > .menu {
+  overflow: hidden;
+  max-height: auto;
+}
+
+.navigation .menu .menu {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navigation .has-menu > .menu > li > a {
+  padding-left: 45px;
+  transition: padding 1s;
+}
+
+.navigation .has-menu > .menu > li:last-child {
+  border-bottom: none;
+}
+
+/* Closed States */
+.navigation:not(.open) {
+  right: 100%;
+}
+
+.navigation:not(.open) .toggle-wrapper .show {
+  right: 0px;
+}
+
+.navigation:not(.open) .toggle-wrapper .hide {
+  right: 50px;
+}
+
+.navigation .has-menu:not(.open)::after {
+  transform: rotate(-90deg);
+}
+
+.navigation .has-menu:not(.open) > .menu {
+  border-top: none;
+  max-height: 0;
+}
+
+.navigation .has-menu:not(.open) > .menu > li > a {
+  padding-left: 15px;
+}
+
+.navigation .toggle-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: none;
+  height: 52px;
+  width: 51px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: absolute;
+  top: -1px;
+  right: calc(0px - 52px);
+}
+
+.navigation .toggle-wrapper span {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: right 0.25s;
+}
+
+.navigation .toggle-wrapper .show {
+  right: -50px;
+}
+
+.cart-link span {
   display: inline-block;
   background: #F8F8F8;
   color: #232323;
-}
-nav .cart-link:hover {
-  background: #B23301;
 }
 
 #hero {
@@ -125,6 +275,9 @@ section[id$=orders] {
   height: 90vh;
 }
 
+#customer-orders {
+  background-color: #F8F8F8;
+}
 #customer-orders tr {
   color: #FE5F1E;
 }

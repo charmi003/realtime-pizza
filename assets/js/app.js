@@ -1,4 +1,6 @@
-
+$(".menu-link").click(function(){
+    location.reload();
+})
 
 /*show and hide passwords*/
 
